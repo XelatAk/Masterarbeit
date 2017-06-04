@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lot_sizing
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-		}
-	}
+	//class Program
+	//{
+	//	static void Main()
+	//	{
+	//	}
+
+	//}
 }
