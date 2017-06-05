@@ -11,6 +11,8 @@ namespace Lot_sizing
 	{
 		public static int setupCost;
 		public static int setupTime;
+		public static int period;
+		public static int demand;
 		public static List<int> inputNeuronen;
 
 		public static void Main()
@@ -22,7 +24,11 @@ namespace Lot_sizing
 		
 			SetupTime();
 
-			Console.WriteLine(inputNeuronen.Count());
+			Period();
+
+			Demand();
+
+			Console.WriteLine($"Es sind {inputNeuronen.Count()} Inputs gespeichert");
 
 			Console.ReadLine();
 
@@ -30,8 +36,6 @@ namespace Lot_sizing
 
 		public static void SetupCost()
 		{
-			//int setupCost;
-			
 			Console.Write("Rüstkosten:");
 			setupCost = Convert.ToInt32(Console.ReadLine());
 			Console.WriteLine($"Die Rüstkosten betragen {setupCost} Euro");
@@ -43,13 +47,37 @@ namespace Lot_sizing
 
 		public static void SetupTime()
 		{
-			//int setupTime;
-			
 			Console.Write("Rüstzeit:");
 			setupTime = Convert.ToInt32(Console.ReadLine());
 			Console.WriteLine($"Die Rüstzeit beträgt {setupTime} Zeiteinheiten");
 
 			inputNeuronen.Add(setupTime);
+		}
+
+		public static void Period()
+		{
+			Console.Write("Anzahl der betrachteten Perioden:");
+			period = Convert.ToInt32(Console.ReadLine());
+			Console.WriteLine($"Es werden {period} Perioden betrachtet");
+
+		}
+
+		public static void Demand()
+		{
+			int num;
+			Console.WriteLine($"Nachfrage der {period} Perioden:");
+
+			num = 0;
+			while(num<period)
+			{
+				demand = Convert.ToInt32(Console.ReadLine());
+				inputNeuronen.Add(demand);
+
+				num += 1;
+			}
+			
+
+			
 		}
 
 	}
